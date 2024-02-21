@@ -86,7 +86,7 @@ public class CarrosDAO extends DAO{
 		
 		try {
 			Statement st = conexao.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-			String sql = "SELECT * FROM Carros" + ((orderBy.trim().length() == 0)? "" : ("ORDER BY" + orderBy));
+			String sql = "SELECT * FROM Carros" + ((orderBy.trim().length() == 0)? "" : (" ORDER BY " + orderBy));
 			System.out.println(sql);
 			ResultSet rs = st.executeQuery(sql);
 			while(rs.next()) {
